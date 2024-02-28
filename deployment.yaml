@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mycompletepipeline-deployment
+  name: mycompletepipeline:1.0.0-37
 spec:
   selector:
     matchLabels:
-      app: mycompletepipeline-app
+      app: mycompletepipeline:1.0.0-37
   template:
     metadata:
       labels:
-        app: mycompletepipeline-app
+        app: mycompletepipeline:1.0.0-37
     spec:
       containers:
-        - name: mycompletepipeline-app
-          image: wasraz/mycompletepipeline:1.0.0-28
+        - name: mycompletepipeline:1.0.0-37
+          image: wasraz/mycompletepipeline:1.0.0-37
           resources:
             limits:
               memory: "256Mi"
