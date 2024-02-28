@@ -4,7 +4,7 @@ pipeline{
     }
     
     environment{
-        APP_NAME="mycompletepipeline"
+        APP_NAME="mycompletepipeline:"
         github_access_token= credentials("github_access_token")
         Jenkins_API_access_token = credentials("Jenkins_API_access_token")
 
@@ -29,7 +29,7 @@ pipeline{
             steps{
                 sh """
                     cat deployment.yaml 
-                    sed -i 's/${APP_NAME}.*/${APP_NAME}:${IMAGE_TAG}/g' deployment.yaml
+                    sed -i 's/${APP_NAME}.*/${APP_NAME}${IMAGE_TAG}/g' deployment.yaml
                     cat deployment.yaml
                 """
             }
@@ -43,7 +43,7 @@ pipeline{
                     git add deployment.yaml
                     git commit -m "Updating the image tag"
                 """
-                withCredentials([gitUsernamePassword(credentialsId:"github_access_token", gitToolName: 'Defaul')]){
+                withCredentials([gitUsernamePassword(credentialsId:"github_access_token", gitToolName: 'Default')]){
                     sh "git push https://github.com/wasrazki/gitops-mycompletepipeline main"
                 }
 
