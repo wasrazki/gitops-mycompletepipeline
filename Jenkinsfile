@@ -43,7 +43,7 @@ pipeline{
                     git add deployment.yaml
                     git commit -m "Updating the image tag"
                 """
-                withCredentials([gitUsernamePassword(credentialsId:"githhub_access-token", gitToolName: 'Defaul')]){
+                withCredentials([gitUsernamePassword(credentialsId:"github_access-token", gitToolName: 'Defaul')]){
                     sh "git push https://github.com/wasrazki/gitops-mycompletepipeline main"
                 }
 
