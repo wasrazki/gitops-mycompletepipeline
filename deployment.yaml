@@ -12,7 +12,7 @@ spec:
         app: mycompletecicdpipeline-app
     spec:
       containers:
-        - name: mycompletepipeline:1.0.0-38
+        - name: mycompletecicdpipeline-app
           image: wasraz/mycompletepipeline:1.0.0-38
           resources:
             limits:
