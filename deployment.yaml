@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mycompletepipeline:1.0.0-37
+  name: mycompleteCICDpipeline-deployment
 spec:
   selector:
     matchLabels:
-      app: mycompletepipeline:1.0.0-37
+      app: mycompleteCICDpipeline-app
   template:
     metadata:
       labels:
-        app: mycompletepipeline:1.0.0-37
+        app: mycompleteCICDpipeline-app
     spec:
       containers:
-        - name: mycompletepipeline:1.0.0-37
+        - name: mycompletepipeline-app
           image: wasraz/mycompletepipeline:1.0.0-37
           resources:
             limits:
