@@ -12,8 +12,8 @@ spec:
         app: mycompletecicdpipeline-app
     spec:
       containers:
-        - name: mycompletepipeline-app
-          image: wasraz/mycompletepipeline:1.0.0-37
+        - name: mycompletepipeline:1.0.0-38
+          image: wasraz/mycompletepipeline:1.0.0-38
           resources:
             limits:
               memory: "256Mi"
